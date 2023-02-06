@@ -1,5 +1,5 @@
 //
-//  APISing.swift
+//  APISign.swift
 //  OKXApiManager
 //
 //  Created by Роман Сенкевич on 5.02.23.
@@ -8,7 +8,7 @@
 import Foundation
 import Alamofire
 
-struct APISing {
+struct APISign {
     var method: HTTPMethod
     var path: String
     var stringParameters: String = ""
@@ -16,7 +16,7 @@ struct APISing {
     var secretKey: String
     var timestamp: String
     
-    func getSign() -> String {
+    func encodedSign() -> String {
         let singURL = timestamp + method.rawValue + path + stringParameters + stringBody()
         print("\(singURL)")
         return singURL.hmac(key: secretKey)

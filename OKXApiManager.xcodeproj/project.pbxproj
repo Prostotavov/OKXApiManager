@@ -16,9 +16,13 @@
 		872F5A0A2990317700889C56 /* String + HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A092990317700889C56 /* String + HMAC.swift */; };
 		872F5A0D29903D1500889C56 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A0C29903D1500889C56 /* APIKeys.swift */; };
 		872F5A0F29903D2900889C56 /* APIHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A0E29903D2900889C56 /* APIHeaders.swift */; };
-		872F5A1129903D4C00889C56 /* APISing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1029903D4C00889C56 /* APISing.swift */; };
+		872F5A1129903D4C00889C56 /* APISign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1029903D4C00889C56 /* APISign.swift */; };
 		872F5A132990409E00889C56 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A122990409E00889C56 /* Balance.swift */; };
 		872F5A1529904EE100889C56 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1429904EE100889C56 /* Order.swift */; };
+		872F5A1B29913C1500889C56 /* TradeAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1A29913C1500889C56 /* TradeAPIRouter.swift */; };
+		872F5A1D29913C7A00889C56 /* AccountAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1C29913C7A00889C56 /* AccountAPIRouter.swift */; };
+		872F5A1F29913CA200889C56 /* PublicAPIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1E29913CA200889C56 /* PublicAPIRouter.swift */; };
+		872F5A21299141B700889C56 /* APIRouterStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A20299141B700889C56 /* APIRouterStruct.swift */; };
 		873BC27B298F1C3C00BF222D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BC27A298F1C3C00BF222D /* AppDelegate.swift */; };
 		873BC27D298F1C3C00BF222D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BC27C298F1C3C00BF222D /* SceneDelegate.swift */; };
 		873BC27F298F1C3C00BF222D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BC27E298F1C3C00BF222D /* ViewController.swift */; };
@@ -35,9 +39,13 @@
 		872F5A092990317700889C56 /* String + HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + HMAC.swift"; sourceTree = "<group>"; };
 		872F5A0C29903D1500889C56 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		872F5A0E29903D2900889C56 /* APIHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHeaders.swift; sourceTree = "<group>"; };
-		872F5A1029903D4C00889C56 /* APISing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISing.swift; sourceTree = "<group>"; };
+		872F5A1029903D4C00889C56 /* APISign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISign.swift; sourceTree = "<group>"; };
 		872F5A122990409E00889C56 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
 		872F5A1429904EE100889C56 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		872F5A1A29913C1500889C56 /* TradeAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradeAPIRouter.swift; sourceTree = "<group>"; };
+		872F5A1C29913C7A00889C56 /* AccountAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountAPIRouter.swift; sourceTree = "<group>"; };
+		872F5A1E29913CA200889C56 /* PublicAPIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicAPIRouter.swift; sourceTree = "<group>"; };
+		872F5A20299141B700889C56 /* APIRouterStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouterStruct.swift; sourceTree = "<group>"; };
 		873BC277298F1C3C00BF222D /* OKXApiManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKXApiManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873BC27A298F1C3C00BF222D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873BC27C298F1C3C00BF222D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,33 +72,107 @@
 		872F59FD298F1FAF00889C56 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				872F5A0B29903D0700889C56 /* APIModel */,
-				872F5A04298F322200889C56 /* Model */,
-				872F5A00298F299900889C56 /* ConnectionSettings.swift */,
-				872F5A02298F2B8E00889C56 /* SessionHelpers.swift */,
+				872F5A29299145DC00889C56 /* APIHelpers */,
+				872F5A2B299146A500889C56 /* APIModel */,
+				872F5A2A2991464000889C56 /* APIRouter */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
-		872F5A04298F322200889C56 /* Model */ = {
+		872F5A222991442D00889C56 /* PublicAPIRouter */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A1E29913CA200889C56 /* PublicAPIRouter.swift */,
+				872F5A232991443C00889C56 /* Model */,
+			);
+			path = PublicAPIRouter;
+			sourceTree = "<group>";
+		};
+		872F5A232991443C00889C56 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				872F5A05298F322900889C56 /* Time.swift */,
-				872F5A122990409E00889C56 /* Balance.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		872F5A242991444F00889C56 /* TradeAPIRouter */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A1A29913C1500889C56 /* TradeAPIRouter.swift */,
+				872F5A252991445B00889C56 /* Model */,
+			);
+			path = TradeAPIRouter;
+			sourceTree = "<group>";
+		};
+		872F5A252991445B00889C56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				872F5A1429904EE100889C56 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		872F5A0B29903D0700889C56 /* APIModel */ = {
+		872F5A262991446F00889C56 /* AccountAPIRouter */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A1C29913C7A00889C56 /* AccountAPIRouter.swift */,
+				872F5A272991447400889C56 /* Model */,
+			);
+			path = AccountAPIRouter;
+			sourceTree = "<group>";
+		};
+		872F5A272991447400889C56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A122990409E00889C56 /* Balance.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		872F5A29299145DC00889C56 /* APIHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A00298F299900889C56 /* ConnectionSettings.swift */,
+				872F5A02298F2B8E00889C56 /* SessionHelpers.swift */,
+			);
+			path = APIHelpers;
+			sourceTree = "<group>";
+		};
+		872F5A2A2991464000889C56 /* APIRouter */ = {
+			isa = PBXGroup;
+			children = (
+				872F59FE298F1FDF00889C56 /* APIRouter.swift */,
+				872F5A20299141B700889C56 /* APIRouterStruct.swift */,
+				872F5A262991446F00889C56 /* AccountAPIRouter */,
+				872F5A242991444F00889C56 /* TradeAPIRouter */,
+				872F5A222991442D00889C56 /* PublicAPIRouter */,
+			);
+			path = APIRouter;
+			sourceTree = "<group>";
+		};
+		872F5A2B299146A500889C56 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
 				872F5A0C29903D1500889C56 /* APIKeys.swift */,
 				872F5A0E29903D2900889C56 /* APIHeaders.swift */,
-				872F5A1029903D4C00889C56 /* APISing.swift */,
-				872F59FE298F1FDF00889C56 /* APIRouter.swift */,
+				872F5A1029903D4C00889C56 /* APISign.swift */,
 			);
 			path = APIModel;
+			sourceTree = "<group>";
+		};
+		872F5A2C299147A900889C56 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				873BC27A298F1C3C00BF222D /* AppDelegate.swift */,
+				873BC27C298F1C3C00BF222D /* SceneDelegate.swift */,
+				873BC280298F1C3C00BF222D /* Main.storyboard */,
+				873BC285298F1C3E00BF222D /* LaunchScreen.storyboard */,
+				873BC283298F1C3E00BF222D /* Assets.xcassets */,
+				873BC288298F1C3E00BF222D /* Info.plist */,
+				872F5A092990317700889C56 /* String + HMAC.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		873BC26E298F1C3C00BF222D = {
@@ -112,15 +194,9 @@
 		873BC279298F1C3C00BF222D /* OKXApiManager */ = {
 			isa = PBXGroup;
 			children = (
+				872F5A2C299147A900889C56 /* Utils */,
 				872F59FD298F1FAF00889C56 /* NetworkLayer */,
-				873BC27A298F1C3C00BF222D /* AppDelegate.swift */,
-				873BC27C298F1C3C00BF222D /* SceneDelegate.swift */,
 				873BC27E298F1C3C00BF222D /* ViewController.swift */,
-				873BC280298F1C3C00BF222D /* Main.storyboard */,
-				873BC283298F1C3E00BF222D /* Assets.xcassets */,
-				873BC285298F1C3E00BF222D /* LaunchScreen.storyboard */,
-				873BC288298F1C3E00BF222D /* Info.plist */,
-				872F5A092990317700889C56 /* String + HMAC.swift */,
 			);
 			path = OKXApiManager;
 			sourceTree = "<group>";
@@ -206,14 +282,18 @@
 			files = (
 				873BC27F298F1C3C00BF222D /* ViewController.swift in Sources */,
 				872F59FF298F1FDF00889C56 /* APIRouter.swift in Sources */,
+				872F5A21299141B700889C56 /* APIRouterStruct.swift in Sources */,
 				872F5A06298F322900889C56 /* Time.swift in Sources */,
 				872F5A0D29903D1500889C56 /* APIKeys.swift in Sources */,
 				872F5A03298F2B8E00889C56 /* SessionHelpers.swift in Sources */,
 				872F5A0A2990317700889C56 /* String + HMAC.swift in Sources */,
 				873BC27B298F1C3C00BF222D /* AppDelegate.swift in Sources */,
-				872F5A1129903D4C00889C56 /* APISing.swift in Sources */,
+				872F5A1129903D4C00889C56 /* APISign.swift in Sources */,
 				872F5A0F29903D2900889C56 /* APIHeaders.swift in Sources */,
+				872F5A1D29913C7A00889C56 /* AccountAPIRouter.swift in Sources */,
 				873BC27D298F1C3C00BF222D /* SceneDelegate.swift in Sources */,
+				872F5A1B29913C1500889C56 /* TradeAPIRouter.swift in Sources */,
+				872F5A1F29913CA200889C56 /* PublicAPIRouter.swift in Sources */,
 				872F5A1529904EE100889C56 /* Order.swift in Sources */,
 				872F5A132990409E00889C56 /* Balance.swift in Sources */,
 				872F5A01298F299900889C56 /* ConnectionSettings.swift in Sources */,
@@ -365,7 +445,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BGTZ6TGNVV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OKXApiManager/Info.plist;
+				INFOPLIST_FILE = OKXApiManager/Utils/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -394,7 +474,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BGTZ6TGNVV;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = OKXApiManager/Info.plist;
+				INFOPLIST_FILE = OKXApiManager/Utils/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

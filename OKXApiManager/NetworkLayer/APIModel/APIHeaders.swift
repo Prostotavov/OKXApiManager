@@ -11,7 +11,7 @@ struct APIHeaders {
     var contentType: String = "application/json"
     var key: String
     var passphrase: String
-    var sign: APISing
+    var sign: APISign
     var timestamp: String
     var isSimulated: String = "0"
     
@@ -19,7 +19,7 @@ struct APIHeaders {
         var headersDictionary: [String: String] = [:]
         headersDictionary["Content-Type"] = contentType
         headersDictionary["OK-ACCESS-KEY"] = key
-        headersDictionary["OK-ACCESS-SIGN"] = sign.getSign()
+        headersDictionary["OK-ACCESS-SIGN"] = sign.encodedSign()
         headersDictionary["OK-ACCESS-TIMESTAMP"] = timestamp
         headersDictionary["OK-ACCESS-PASSPHRASE"] = passphrase
         headersDictionary["x-simulated-trading"] = isSimulated

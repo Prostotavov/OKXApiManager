@@ -30,8 +30,8 @@ class ViewController: UIViewController {
     }
 
     func getTime() {
-        let apiKeysMock = APIKeys(key: "", passphrase: "", secretKey: "")
-        let apiRouterStruct = APIRouterStruct(apiRouter: .time, apiKeys: apiKeysMock)
+        let apiKeys = APIKeys(key: "", passphrase: "", secretKey: "")
+        let apiRouterStruct = APIRouterStruct(.public(.time), apiKeys)
         let timePromise:  Promise<Time> = session.request(apiRouterStruct)
         
         firstly {
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
     
     func getBalance(apiKeys: APIKeys) {
-        let apiRouterStruct = APIRouterStruct(apiRouter: .balance(ccy: "USDT,SOL,ETH,BTC,FITFI"), apiKeys: apiKeys)
+        let apiRouterStruct = APIRouterStruct(.account(.balance(ccy: "USDT,SOL,ETH,BTC,FITFI")), apiKeys)
         let balancePromise:  Promise<Balance> = session.request(apiRouterStruct)
         
         firstly {
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     
     func placeOrder(apiKeys: APIKeys) {
         let postOrder = PostOrder(instID: "FITFI-USDT", tdMode: "cash", side: "buy", ordType: "limit", px: "0.01", sz: "1")
-        let apiRouterStruct = APIRouterStruct(apiRouter: .order(postOrder: postOrder), apiKeys: apiKeys)
+        let apiRouterStruct = APIRouterStruct(.trade(.order(postOrder: postOrder)), apiKeys)
         let orderPromise:  Promise<Order> = session.request(apiRouterStruct)
         
         firstly {

@@ -1,8 +1,8 @@
 //
-//  APIRouter.swift
+//  APIRouterStruct.swift
 //  OKXApiManager
 //
-//  Created by Роман Сенкевич on 5.02.23.
+//  Created by Роман Сенкевич on 6.02.23.
 //
 
 import Foundation
@@ -12,6 +12,11 @@ struct APIRouterStruct: URLRequestConvertible {
     
     let apiRouter: APIRouter
     let apiKeys: APIKeys
+    
+    init(_ apiRouter: APIRouter, _ apiKeys: APIKeys) {
+        self.apiRouter = apiRouter
+        self.apiKeys = apiKeys
+    }
     
     private func timestamp() -> String {
         let dateFormatter = DateFormatter()
@@ -46,7 +51,7 @@ struct APIRouterStruct: URLRequestConvertible {
         }
         
         let timestamp = timestamp()
-        let sign = APISing(method: apiRouter.method, path: apiRouter.path,
+        let sign = APISign(method: apiRouter.method, path: apiRouter.path,
                            stringParameters: stringParameters, httpBody: urlRequest.httpBody,
                            secretKey: apiKeys.secretKey, timestamp: timestamp)
         let headers = APIHeaders(key: apiKeys.key, passphrase: apiKeys.passphrase,
@@ -58,64 +63,5 @@ struct APIRouterStruct: URLRequestConvertible {
         
         print("urlRequest: \(urlRequest)")
         return urlRequest
-    }
-}
-
-enum APIRouter {
-    
-    // MARK: -Endpoints
-    
-    case time
-    case balance(ccy: String)
-    case order(postOrder: PostOrder)
-    
-    var baseURL: String {
-        switch self {
-        default: return "https://www.okx.cab"
-        }
-    }
-    
-    var method: HTTPMethod {
-        switch self {
-        case .time: return .get
-        case .balance: return .get
-        case .order: return .post
-        }
-    }
-    
-    var path: String {
-        switch self {
-        case .time: return "api/v5/public/time"
-        case .balance: return "/api/v5/account/balance"
-        case .order: return "/api/v5/trade/order"
-        }
-    }
-    
-    var encoding: ParameterEncoding {
-        switch method {
-        default: return URLEncoding.default
-        }
-    }
-    
-    var parameters: Parameters? {
-        switch self {
-        case .time: return nil
-        case let .balance(ccy): return ["ccy": ccy]
-        case .order: return nil
-        }
-    }
-    
-    var body: Parameters? {
-        switch self {
-        case .time: return nil
-        case .balance: return nil
-        case let .order(postOrder): return postOrder.bodyForAPIRequest()
-        }
-    }
-    
-    var timeout: TimeInterval {
-        switch self {
-        default: return 20
-        }
     }
 }
