@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		872F59F9298F1E4D00889C56 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 872F59F8298F1E4D00889C56 /* Alamofire */; };
+		872F59FC298F1F1C00889C56 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 872F59FB298F1F1C00889C56 /* PromiseKit */; };
+		872F59FF298F1FDF00889C56 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F59FE298F1FDF00889C56 /* APIRouter.swift */; };
+		872F5A01298F299900889C56 /* ConnectionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A00298F299900889C56 /* ConnectionSettings.swift */; };
+		872F5A03298F2B8E00889C56 /* SessionHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A02298F2B8E00889C56 /* SessionHelpers.swift */; };
+		872F5A06298F322900889C56 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A05298F322900889C56 /* Time.swift */; };
+		872F5A0A2990317700889C56 /* String + HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A092990317700889C56 /* String + HMAC.swift */; };
+		872F5A0D29903D1500889C56 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A0C29903D1500889C56 /* APIKeys.swift */; };
+		872F5A0F29903D2900889C56 /* APIHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A0E29903D2900889C56 /* APIHeaders.swift */; };
+		872F5A1129903D4C00889C56 /* APISing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1029903D4C00889C56 /* APISing.swift */; };
+		872F5A132990409E00889C56 /* Balance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A122990409E00889C56 /* Balance.swift */; };
+		872F5A1529904EE100889C56 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 872F5A1429904EE100889C56 /* Order.swift */; };
 		873BC27B298F1C3C00BF222D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BC27A298F1C3C00BF222D /* AppDelegate.swift */; };
 		873BC27D298F1C3C00BF222D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BC27C298F1C3C00BF222D /* SceneDelegate.swift */; };
 		873BC27F298F1C3C00BF222D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873BC27E298F1C3C00BF222D /* ViewController.swift */; };
@@ -16,6 +28,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		872F59FE298F1FDF00889C56 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		872F5A00298F299900889C56 /* ConnectionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionSettings.swift; sourceTree = "<group>"; };
+		872F5A02298F2B8E00889C56 /* SessionHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionHelpers.swift; sourceTree = "<group>"; };
+		872F5A05298F322900889C56 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		872F5A092990317700889C56 /* String + HMAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + HMAC.swift"; sourceTree = "<group>"; };
+		872F5A0C29903D1500889C56 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		872F5A0E29903D2900889C56 /* APIHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHeaders.swift; sourceTree = "<group>"; };
+		872F5A1029903D4C00889C56 /* APISing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APISing.swift; sourceTree = "<group>"; };
+		872F5A122990409E00889C56 /* Balance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balance.swift; sourceTree = "<group>"; };
+		872F5A1429904EE100889C56 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		873BC277298F1C3C00BF222D /* OKXApiManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OKXApiManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		873BC27A298F1C3C00BF222D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		873BC27C298F1C3C00BF222D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,12 +53,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872F59F9298F1E4D00889C56 /* Alamofire in Frameworks */,
+				872F59FC298F1F1C00889C56 /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		872F59FD298F1FAF00889C56 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A0B29903D0700889C56 /* APIModel */,
+				872F5A04298F322200889C56 /* Model */,
+				872F5A00298F299900889C56 /* ConnectionSettings.swift */,
+				872F5A02298F2B8E00889C56 /* SessionHelpers.swift */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
+		872F5A04298F322200889C56 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A05298F322900889C56 /* Time.swift */,
+				872F5A122990409E00889C56 /* Balance.swift */,
+				872F5A1429904EE100889C56 /* Order.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		872F5A0B29903D0700889C56 /* APIModel */ = {
+			isa = PBXGroup;
+			children = (
+				872F5A0C29903D1500889C56 /* APIKeys.swift */,
+				872F5A0E29903D2900889C56 /* APIHeaders.swift */,
+				872F5A1029903D4C00889C56 /* APISing.swift */,
+				872F59FE298F1FDF00889C56 /* APIRouter.swift */,
+			);
+			path = APIModel;
+			sourceTree = "<group>";
+		};
 		873BC26E298F1C3C00BF222D = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +112,7 @@
 		873BC279298F1C3C00BF222D /* OKXApiManager */ = {
 			isa = PBXGroup;
 			children = (
+				872F59FD298F1FAF00889C56 /* NetworkLayer */,
 				873BC27A298F1C3C00BF222D /* AppDelegate.swift */,
 				873BC27C298F1C3C00BF222D /* SceneDelegate.swift */,
 				873BC27E298F1C3C00BF222D /* ViewController.swift */,
@@ -63,6 +120,7 @@
 				873BC283298F1C3E00BF222D /* Assets.xcassets */,
 				873BC285298F1C3E00BF222D /* LaunchScreen.storyboard */,
 				873BC288298F1C3E00BF222D /* Info.plist */,
+				872F5A092990317700889C56 /* String + HMAC.swift */,
 			);
 			path = OKXApiManager;
 			sourceTree = "<group>";
@@ -83,6 +141,10 @@
 			dependencies = (
 			);
 			name = OKXApiManager;
+			packageProductDependencies = (
+				872F59F8298F1E4D00889C56 /* Alamofire */,
+				872F59FB298F1F1C00889C56 /* PromiseKit */,
+			);
 			productName = OKXApiManager;
 			productReference = 873BC277298F1C3C00BF222D /* OKXApiManager.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +173,10 @@
 				Base,
 			);
 			mainGroup = 873BC26E298F1C3C00BF222D;
+			packageReferences = (
+				872F59F7298F1E4D00889C56 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				872F59FA298F1F1C00889C56 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+			);
 			productRefGroup = 873BC278298F1C3C00BF222D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +205,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				873BC27F298F1C3C00BF222D /* ViewController.swift in Sources */,
+				872F59FF298F1FDF00889C56 /* APIRouter.swift in Sources */,
+				872F5A06298F322900889C56 /* Time.swift in Sources */,
+				872F5A0D29903D1500889C56 /* APIKeys.swift in Sources */,
+				872F5A03298F2B8E00889C56 /* SessionHelpers.swift in Sources */,
+				872F5A0A2990317700889C56 /* String + HMAC.swift in Sources */,
 				873BC27B298F1C3C00BF222D /* AppDelegate.swift in Sources */,
+				872F5A1129903D4C00889C56 /* APISing.swift in Sources */,
+				872F5A0F29903D2900889C56 /* APIHeaders.swift in Sources */,
 				873BC27D298F1C3C00BF222D /* SceneDelegate.swift in Sources */,
+				872F5A1529904EE100889C56 /* Order.swift in Sources */,
+				872F5A132990409E00889C56 /* Balance.swift in Sources */,
+				872F5A01298F299900889C56 /* ConnectionSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +436,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		872F59F7298F1E4D00889C56 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		872F59FA298F1F1C00889C56 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit?ysclid=ldqknps5w4953276091";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		872F59F8298F1E4D00889C56 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872F59F7298F1E4D00889C56 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		872F59FB298F1F1C00889C56 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 872F59FA298F1F1C00889C56 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 873BC26F298F1C3C00BF222D /* Project object */;
 }
